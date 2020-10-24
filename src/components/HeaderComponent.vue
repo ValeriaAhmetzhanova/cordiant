@@ -1,10 +1,10 @@
 <template>
     <div class="header">
         <div class="header--item">
-            ЛАЙФХАКЕР
+            <img src="../assets/logo.svg" alt="" height="20px">
         </div>
         <div class="header--item header--item-right">
-            Cordiant
+            <img src="../assets/cordiant.svg" alt="" height="20px">
         </div>
     </div>
 </template>
