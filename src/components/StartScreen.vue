@@ -1,26 +1,19 @@
 <template> 
     <div>
-        <div class="header">
-            <div class="header--item">
-                ЛАЙФХАКЕР
-            </div>
-            <div class="header--item header--item-right">
-                Cordiant
-            </div>
-        </div>
-        <div>
-            <div class="body">
-                <div class="body--title">
+        <Header/>
+        <div id="start">
+            <div class="start-info">
+                <div class="start-info--title">
                     Узнаете ли вы Россию
                     <br>
                     <strong>ПО ДОРОГАМ?</strong>
                 </div>
-                <div class="body--text">
+                <div class="start-info--text">
                     Мы составили этот тест вместе с производителем шин Cordiant,
                     чтобы вы проверили, сможете ли отличить российские дороги
                     от остальных. Активируйте внутреннего Шерлока — и вперёд!
                     Пройдёте тест до конца — получите скидку 15% на зимнюю резину.
-                    <div class="btn"
+                    <div class="btn btn-action"
                          v-on:click="$emit('startQuiz')">
                         Пройти тест!
                     </div>
@@ -38,8 +31,11 @@
 </template>
 
 <script>
+    import Header from "./HeaderComponent";
+
     export default {
-        name: "StartScreen"
+        name: "StartScreen",
+        components: { Header }
     };
 </script>
 
@@ -53,43 +49,27 @@
         box-shadow: inset 10px 10px 20px black;
         height: 100vh;
     }
-    .header {
-        padding: 30px;
-        margin-bottom: 40px;
-    }
-    .header--item {
-        display: inline-block;
-        color: white;
-        font-size: 2rem;
-    }
-    .header--item-right {
-        float: right;
-    }
-    .body {
+    .start-info {
         width: 50%;
         background: #004373;
         text-align: center;
-        color: white;
         border: 2px solid white;
         border-right: none;
         margin-left: auto;
         margin-right: 0;
+        position: relative;
+        top: 20%;
     }
-    .body--title {
+    .start-info--title {
         padding: 30px;
         border-bottom: 2px solid white;
         margin-bottom: 8px;
         font-size: 2rem;
     }
-    .body--text {
+    .start-info--text {
         padding: 30px;
         border-top: 2px solid white;
         font-size: 1.5rem;
-    }
-    .footer {
-        position: fixed;
-        padding: 30px;
-        bottom: 0;
     }
     .social-icons {
         position: relative;
@@ -104,6 +84,9 @@
         border-radius: 50%;
         text-align: center;
         margin: 10px;
+    }
+    .icon:hover {
+        background: white;
     }
     .icon--img {
         position: relative;
