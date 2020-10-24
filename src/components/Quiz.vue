@@ -8,13 +8,17 @@
                     v-bind:question="this.questions[questionIndex]"
                     v-bind:index="this.questionIndex"
                     v-bind:total="this.questions.length"
-                    v-bind:additional="this.questions[questionIndex].additional"
                     v-on:answer="handleAnswer"
                     v-on:next="next"
             />
         </div>
         <div v-if="status==='result'">
-            {{ this.correct }} / {{ this.questions.length }}
+            <Result
+                    v-bind:correct="this.correct"
+                    v-bind:total="this.questions.length"
+                    v-bind:results="results"
+                    v-on:again="reset"
+            />
         </div>
     </div>
 </template>
@@ -22,6 +26,7 @@
 <script>
     import StartScreen from './StartScreen'
     import Question from "./Question";
+    import Result from "./Result";
 
     export default {
         data() {
@@ -34,6 +39,9 @@
         props: {
             questions: {
                 required: true
+            },
+            results: {
+                required: true
             }
         },
         methods: {
@@ -45,10 +53,16 @@
             handleAnswer(option) {
                 if (option.correct) this.correct++;
             },
+            reset(){
+               this.questionIndex = 0;
+               this.status = "quiz";
+               this.correct = 0;
+            }
         },
         components: {
             StartScreen,
-            Question
+            Question,
+            Result
         }
     }
 </script>
@@ -58,6 +72,7 @@
         font-family: "Open Sans", sans-serif;
         color: white;
         box-sizing: border-box;
+        line-height: 1.3;
     }
     body, div {
         margin: 0;
@@ -74,6 +89,7 @@
     }
     .btn-action {
         background: #7DBFFF;
+        width: fit-content;
         color: #004373;
     }
     .btn-action:hover {
@@ -85,10 +101,70 @@
         bottom: 0;
     }
     .footer-small {
+        display: flex;
+        flex-direction: row-reverse;
         position: fixed;
         padding: 20px;
         bottom: 0;
-        width: 35%;
+        width: 40%;
         text-align: right;
+    }
+    .footer-small--link {
+        display: inline-block;
+        width: 50%;
+    }
+    .quiz {
+        display: flex;
+        width: 100%;
+    }
+    .quiz--item {
+        justify-content: center;
+        height: 100vh;
+        width: 50%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .quiz--item--image-container {
+        display: flex;
+    }
+    .quiz--img {
+        position: relative;
+        height: 100vh;
+        flex: none;
+    }
+    .quiz--img-top{
+        position: absolute;
+        top: 0;
+        left: 25%;
+        width: 20%;
+    }
+    .quiz--img-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: inherit;
+        height: auto;
+    }
+    .quiz--text {
+        background: #004373;
+        height: auto;
+        padding: 100px 80px;
+    }
+    .quiz--container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+    .quiz--title {
+        text-align: center;
+        margin: 20px;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .quiz--feedback {
+        font-weight: 600;
+        margin: 20px 0;
+    }
+    .quiz--additional {
+        margin: 30px 0;
     }
 </style>

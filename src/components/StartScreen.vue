@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="footer">
-            <div class="social-icons">
+            <div class="social-icons social-icons-left">
                 <div class="icon"><img class="icon--img" src="../assets/twitter.svg" alt=""></div>
                 <div class="icon"><img class="icon--img" src="../assets/vk.svg" alt=""></div>
                 <div class="icon"><img class="icon--img" src="../assets/fb.svg" alt=""></div>
@@ -73,6 +73,8 @@
     }
     .social-icons {
         position: relative;
+    }
+    .social-icons-left {
         left: 120px;
         bottom: 10px;
     }

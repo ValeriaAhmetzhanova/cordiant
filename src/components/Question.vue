@@ -1,23 +1,23 @@
 <template>
-    <div id="quiz">
+    <div>
         <Header/>
-        <div class="question">
-            <div class="question--item question--item--image-container">
-                <img class="question--img" :src="image" alt="">
-                <img class="question--img-top" src="../assets/question.png" alt=""
+        <div class="quiz">
+            <div class="quiz--item quiz--item--image-container">
+                <img class="quiz--img" :src="image" alt="">
+                <img class="quiz--img-top" src="../assets/question.png" alt=""
                     v-if="status==='asked'">
-                <img class="question--img-top" src="../assets/right.png" alt=""
+                <img class="quiz--img-top" src="../assets/right.png" alt=""
                     v-if="status==='right'">
-                <img class="question--img-top" src="../assets/wrong.png" alt=""
+                <img class="quiz--img-top" src="../assets/wrong.png" alt=""
                      v-if="status==='wrong'">
-                <img class="question--img-bottom" src="../assets/wheel.png" alt="">
+                <img class="quiz--img-bottom" src="../assets/wheel.png" alt="">
             </div>
-            <div class="question--item question--text">
+            <div class="quiz--item quiz--text">
                 <div>
-                    <div class="question--counter">{{ this.index + 1 + ' / ' + this.total}}</div>
+                    <div class="quiz--counter">{{ this.index + 1 + ' / ' + this.total}}</div>
                     <div v-if="status==='asked'">
-                        <div class="question--conainer">
-                            <div class="question--title">
+                        <div class="quiz--container">
+                            <div class="quiz--title">
                                 {{ this.question.text }}
                             </div>
                             <div class="btn btn-option"
@@ -28,9 +28,9 @@
                         </div>
                     </div>
                     <div v-if="status!=='asked'">
-                        <div class="question--container">
-                            <div class="question--feedback">{{ this.feedback }}</div>
-                            <div class="question--additional">{{ additional }}</div>
+                        <div class="quiz--container">
+                            <div class="quiz--feedback">{{ this.feedback }}</div>
+                            <div class="quiz--additional">{{ additional }}</div>
                             <div class="btn btn-action"
                                  v-on:click="nextQuestion">
                                 Далее
@@ -39,7 +39,9 @@
                     </div>
                 </div>
                 <div class="footer-small">
-                    <a href="">Лайфхакер</a>  | <a href="">Cordiant</a> © 2020
+                    <div class="footer-small--link">
+                        <a href="">Лайфхакер</a>  | <a href="">Cordiant</a> © 2020
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,60 +97,6 @@
 </script>
 
 <style>
-    .question {
-        display: flex;
-        width: 100%;
-    }
-    .question--item {
-        justify-content: center;
-        height: 100vh;
-        width: 50%;
-        background-repeat: no-repeat;
-        overflow: hidden;
-    }
-    .question--item--image-container {
-        display: flex;
-    }
-    .question--img {
-        position: relative;
-        height: 100vh;
-        flex: none;
-    }
-    .question--img-top{
-        position: absolute;
-        top: 0;
-        left: 25%;
-        width: 20%;
-    }
-    .question--img-bottom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: inherit;
-        height: auto;
-    }
-    .question--text {
-        background: #004373;
-        height: auto;
-        padding: 100px 80px;
-    }
-    .question--container {
-        width: 90%;
-        padding: 30px 20px;
-    }
-    .question--title {
-        text-align: center;
-        margin: 20px;
-        font-size: 2rem;
-        font-weight: 600;
-    }
-    .question--feedback {
-        font-weight: 600;
-        margin: 20px 0;
-    }
-    .question--additional {
-        margin: 30px 0;
-    }
     .btn-option {
         background: rgba(255, 255, 255, 0.2);
     }
