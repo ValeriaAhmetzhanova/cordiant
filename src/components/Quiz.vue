@@ -176,8 +176,8 @@
             width: 100%;
         }
         .quiz--img {
-            height: auto;
             width: 100vw;
+            height: 62vw;
         }
         .quiz--img-bottom {
             display: none;

@@ -209,7 +209,7 @@
     .modal {
         display: none;
         position: fixed;
-        bottom: 60px;
+        bottom: 10vh;
         right: 28%;
         background: white;
         border-radius: 5px;
