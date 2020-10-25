@@ -3,12 +3,18 @@
         <div class="quiz">
             <div class="quiz--item quiz--item--image-container">
                 <img class="quiz--img" :src="image" alt="">
-                <img class="quiz--img-top" src="../assets/question.png" alt=""
-                    v-if="status==='asked'">
-                <img class="quiz--img-top" src="../assets/right.png" alt=""
-                    v-if="status==='right'">
-                <img class="quiz--img-top" src="../assets/wrong.png" alt=""
-                     v-if="status==='wrong'">
+                <transition name="fade">
+                    <img class="quiz--img-top" src="../assets/question.png" alt=""
+                        v-if="status==='asked'">
+                </transition>
+                <transition name="fade">
+                    <img class="quiz--img-top" src="../assets/right.png" alt=""
+                        v-if="status==='right'">
+                </transition>
+                <transition name="fade">
+                    <img class="quiz--img-top" src="../assets/wrong.png" alt=""
+                         v-if="status==='wrong'">
+                </transition>
                 <img class="quiz--img-bottom" src="../assets/wheel.png" alt="">
             </div>
             <div class="quiz--item quiz--text">
@@ -17,19 +23,19 @@
                     <div v-if="status==='asked'">
                         <div class="quiz--container">
                             <div class="quiz--title">
-                                {{ this.question.text }}
+                                <div v-html="this.question.text"></div>
                             </div>
                             <div class="btn btn-option"
                                  v-for="option in this.question.answers"
                                  v-on:click="handleAnswer(option)">
-                                {{ option.text }}
+                                <div v-html="option.text"></div>
                             </div>
                         </div>
                     </div>
                     <div v-if="status!=='asked'">
                         <div class="quiz--container">
-                            <div class="quiz--feedback">{{ this.feedback }}</div>
-                            <div class="quiz--additional">{{ additional }}</div>
+                            <div class="quiz--feedback"><div v-html="this.feedback"></div></div>
+                            <div class="quiz--additional"><div v-html="this.question.additional"></div></div>
                             <div class="btn btn-action"
                                  v-on:click="nextQuestion">
                                 Далее
@@ -37,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-small">
+                <div class="footer-small footer-absolute">
                     <div class="footer-small--link">
                         <a href="">Лайфхакер</a>  | <a href="">Cordiant</a> © 2020
                     </div>
@@ -59,8 +65,7 @@
             },
             total: {
                 required: true
-            },
-            additional: {}
+            }
         },
         data () {
             return {
@@ -102,5 +107,11 @@
     }
     .btn-option:active {
         background: white;
+    }
+    .fade-leave-active {
+        transition: opacity .4s;
+    }
+    .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
     }
 </style>

@@ -8,13 +8,15 @@
                     <strong>ПО ДОРОГАМ?</strong>
                 </div>
                 <div class="start-info--text">
-                    Мы составили этот тест вместе с производителем шин Cordiant,
-                    чтобы вы проверили, сможете ли отличить российские дороги
-                    от остальных. Активируйте внутреннего Шерлока — и вперёд!
-                    Пройдёте тест до конца — получите скидку 15% на зимнюю резину.
-                    <div class="btn btn-action"
-                         v-on:click="$emit('startQuiz')">
-                        Пройти тест!
+                    <div class="start-info--container">
+                        Мы составили этот тест вместе с производителем шин <a href="">Cordiant</a>,
+                        чтобы вы проверили, сможете ли отличить российские дороги
+                        от остальных. Активируйте внутреннего Шерлока — и вперёд!
+                        Пройдёте тест до конца — получите <strong>скидку 15%</strong> на зимнюю резину.
+                        <div class="btn btn-action"
+                             v-on:click="$emit('startQuiz')">
+                            Пройти тест!
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,7 +56,7 @@
         margin-left: auto;
         margin-right: 0;
         position: relative;
-        top: 20%;
+        top: 15%;
     }
     .start-info--title {
         padding: 30px;
@@ -63,9 +65,17 @@
         font-size: 2rem;
     }
     .start-info--text {
-        padding: 30px;
+        padding: 40px 30px;
         border-top: 2px solid white;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        text-align: left;
+    }
+    .start-info--container .btn {
+        margin-top: 40px;
+    }
+    .start-info--container {
+        width: 90%;
+        margin-left: auto;
     }
     .social-icons {
         position: relative;
@@ -89,6 +99,6 @@
     .icon--img {
         position: relative;
         vertical-align: middle;
-        top: 10px;
+        top: 6px;
     }
 </style>

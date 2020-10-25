@@ -72,10 +72,10 @@
 
 <style>
     * {
-        font-family: "Open Sans", sans-serif;
+        font-family: "PT Sans", sans-serif;
         color: white;
         box-sizing: border-box;
-        line-height: 1.3;
+        line-height: 1.5;
     }
     body, div {
         margin: 0;
@@ -106,11 +106,17 @@
     .footer-small {
         display: flex;
         flex-direction: row-reverse;
-        position: relative;
         padding: 20px;
         bottom: 0;
-        width: 90%;
         text-align: right;
+    }
+    .footer-absolute {
+        position: absolute;
+        width: 40%;
+    }
+    .footer-relative {
+        position: relative;
+        width: 90%;
     }
     .footer-small--link {
         display: inline-block;

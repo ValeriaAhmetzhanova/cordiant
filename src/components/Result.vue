@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-small">
+                <div class="footer-small footer-relative">
                     <div class="footer-small--link">
                         <a href="">Лайфхакер</a>  | <a href="">Cordiant</a> © 2020
                     </div>
