@@ -22,20 +22,20 @@
                     <div class="quiz--counter">{{ this.index + 1 + ' / ' + this.total}}</div>
                     <div v-if="status==='asked'">
                         <div class="quiz--container">
-                            <div class="quiz--title">
-                                <div v-html="this.question.text"></div>
+                            <div class="quiz--title"
+                                 v-html="this.question.text">
                             </div>
                             <div class="btn btn-option"
                                  v-for="option in this.question.answers"
-                                 v-on:click="handleAnswer(option)">
-                                <div v-html="option.text"></div>
+                                 v-on:click="handleAnswer(option)"
+                                 v-html="option.text">
                             </div>
                         </div>
                     </div>
                     <div v-if="status!=='asked'">
                         <div class="quiz--container">
-                            <div class="quiz--feedback"><div v-html="this.feedback"></div></div>
-                            <div class="quiz--additional"><div v-html="this.question.additional"></div></div>
+                            <div class="quiz--feedback" v-html="this.feedback"></div>
+                            <div class="quiz--additional" v-html="this.question.additional"></div>
                             <div class="btn btn-action"
                                  v-on:click="nextQuestion">
                                 Далее
@@ -101,11 +101,12 @@
     .btn-option {
         background: rgba(255, 255, 255, 0.2);
     }
-    .btn-option:hover {
+    .btn-option:hover, .btn-option:hover strong {
         background: #7DBFFF;
         color: #004373;
     }
     .btn-option:active {
+        color: #004373;
         background: white;
     }
     .quiz--text--wrapper {
