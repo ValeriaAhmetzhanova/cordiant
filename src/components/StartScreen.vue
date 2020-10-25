@@ -19,6 +19,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="footer-mobile">
+                    <div class="social-icons">
+                        <div class="icon"><img class="icon--img" src="../assets/twitter.svg" alt=""></div>
+                        <div class="icon"><img class="icon--img" src="../assets/vk.svg" alt=""></div>
+                        <div class="icon"><img class="icon--img" src="../assets/fb.svg" alt=""></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer">
@@ -44,7 +51,7 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        box-shadow: inset 10px 10px 20px black;
+        box-shadow: inset 0 40px 50px -20px black;
         height: 100vh;
     }
     .start-info {
@@ -67,7 +74,6 @@
     .start-info--text {
         padding: 40px 30px;
         border-top: 2px solid white;
-        font-size: 1.3rem;
         text-align: left;
     }
     .start-info--container .btn {
@@ -75,7 +81,7 @@
     }
     .start-info--container {
         width: 90%;
-        margin-left: auto;
+        margin: auto;
     }
     .social-icons {
         position: relative;
@@ -100,5 +106,33 @@
         position: relative;
         vertical-align: middle;
         top: 6px;
+    }
+    .footer-mobile {
+        display: none;
+    }
+    @media only screen and (max-width: 991px) {
+        .start-info {
+            width: 100%;
+            top: 40%;
+            border-left: none;
+        }
+        .footer {
+            display: none;
+        }
+        .footer-mobile {
+            display: block;
+            border-top: 2px solid white;
+            text-align: center;
+            padding: 30px;
+        }
+    }
+    @media only screen and (min-width: 992px) {
+        .start-info--container {
+            margin-right: 0;
+            margin-left: auto;
+        }
+        .start-info--text {
+            font-size: 1.3rem;
+        }
     }
 </style>

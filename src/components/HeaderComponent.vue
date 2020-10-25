@@ -1,10 +1,10 @@
 <template>
     <div class="header">
         <div class="header--item">
-            <img src="../assets/logo.svg" alt="" height="20px">
+            <img class="header--logo" src="../assets/logo.svg" alt="" height="20px">
         </div>
         <div class="header--item header--item-right">
-            <img src="../assets/cordiant.svg" alt="" height="20px">
+            <img class="header--logo" src="../assets/cordiant.svg" alt="" height="20px">
         </div>
     </div>
 </template>
@@ -22,7 +22,7 @@
         z-index: 5;
         padding: 30px;
         margin-bottom: 40px;
-        width: 80%;
+        width: 90%;
         left: 0;
         right: 0;
         margin-left: auto;
@@ -35,5 +35,13 @@
     }
     .header--item-right {
         float: right;
+    }
+    @media only screen and (max-width: 991px) {
+        .header--item {
+            width: min-content;
+        }
+        .header--logo {
+            height: 15px;
+        }
     }
 </style>

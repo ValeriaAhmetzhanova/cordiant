@@ -51,7 +51,50 @@
                     <div class="footer-small--link">
                         <a href="">Лайфхакер</a>  | <a href="">Cordiant</a> © 2020
                     </div>
-                    <div class="footer-small--link"><a href="">Команда проекта</a></div>
+                    <div class="footer-small--link">
+                        <div class="modal--toggle">
+                            <div class="modal">
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Креатив</div>
+                                    <div class="modal--column">Сергей Габер</div>
+                                </div>
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Редактор</div>
+                                    <div class="modal--column">Маша Пчелкина</div>
+                                </div>
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Автор</div>
+                                    <div class="modal--column">Тоня Рубцова</div>
+                                </div>
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Дизайнер</div>
+                                    <div class="modal--column">Таня Репина</div>
+                                </div>
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Разработчик</div>
+                                    <div class="modal--column">Григорий Тимошук</div>
+                                </div>
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Тестировщик</div>
+                                    <div class="modal--column">Ксения Старостина</div>
+                                </div>
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Аналитик</div>
+                                    <div class="modal--column">Валерия Нечаева</div>
+                                </div>
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Менеджер проекта</div>
+                                    <div class="modal--column">Яна Скрипичникова</div>
+                                </div>
+                                <div class="modal--row">
+                                    <div class="modal--column bold">Менеджер по продажам</div>
+                                    <div class="modal--column">Галина Корецкая</div>
+                                </div>
+                            </div>
+                            <a href="">Команда проекта</a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,7 +163,6 @@
         align-items: center;
         width: 100%;
         border-bottom: 2px solid white;
-        padding: 80px 40px 20px 40px;
     }
     .quiz-result--title {
         width: 80%;
@@ -130,13 +172,14 @@
     }
     .quiz-result--text {
         width: 80%;
-        margin-top: 25px;
+        margin: 25px;
     }
     .quiz-result--actions {
         display: flex;
-        flex-direction: row;
-        width: 80%;
+        flex-direction: column;
         text-align: left;
+        width: 100%;
+        align-items: center;
     }
     .quiz-result--svg {
         vertical-align: middle;
@@ -144,8 +187,7 @@
     }
     .quiz-result--action {
         color: #7DBFFF;
-        margin: auto 0;
-        width: 50%;
+        margin-bottom: 20px;
     }
     .quiz-result--action:hover {
         color: white;
@@ -157,12 +199,57 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px 40px;
     }
     .promo {
         background: #002B57;
         color: #96ede7;
         padding: 3px;
         border-radius: 3px;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        bottom: 60px;
+        right: 28%;
+        background: white;
+        border-radius: 5px;
+        height: 200px;
+        width: 260px;
+        padding: 15px;
+    }
+    .modal--row {
+        display: flex;
+        flex-direction: row;
+    }
+    .modal--column {
+        width: 50%;
+        color: #979797;
+        font-size: 0.72rem;
+        text-align: left;
+    }
+    .modal--toggle:hover a {
+        color: white;
+    }
+    .modal--toggle:hover .modal {
+        display: block;
+    }
+    .bold {
+        font-weight: 600;
+    }
+    @media only screen and (min-width: 992px) {
+        .quiz-result--container {
+            padding: 80px 40px 20px 40px;
+        }
+        .quiz-result--actions {
+            flex-direction: row;
+            width: 80%;
+        }
+        .quiz-result--action {
+            margin: auto 0;
+            width: 50%;
+        }
+        .quiz-result--additional {
+            padding: 20px 40px;
+        }
     }
 </style>

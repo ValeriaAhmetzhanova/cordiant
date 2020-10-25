@@ -18,7 +18,7 @@
                 <img class="quiz--img-bottom" src="../assets/wheel.png" alt="">
             </div>
             <div class="quiz--item quiz--text">
-                <div>
+                <div class="quiz--text--wrapper">
                     <div class="quiz--counter">{{ this.index + 1 + ' / ' + this.total}}</div>
                     <div v-if="status==='asked'">
                         <div class="quiz--container">
@@ -107,6 +107,9 @@
     }
     .btn-option:active {
         background: white;
+    }
+    .quiz--text--wrapper {
+        min-height: 50vh;
     }
     .fade-leave-active {
         transition: opacity .4s;

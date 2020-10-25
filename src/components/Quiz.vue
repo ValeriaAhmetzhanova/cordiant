@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="main">
         <Header/>
         <div v-if="status==='start'">
             <StartScreen v-on:startQuiz="next"/>
@@ -88,12 +88,12 @@
         border-radius: 3px;
         width: auto;
         margin: 15px 0;
-        font-size: 1.2rem;
     }
     .btn-action {
         background: #7DBFFF;
         width: fit-content;
         color: #004373;
+        text-align: center;
     }
     .btn-action:hover {
         background: white;
@@ -110,17 +110,12 @@
         bottom: 0;
         text-align: right;
     }
-    .footer-absolute {
-        position: absolute;
-        width: 40%;
+    .footer-small--link {
+        margin: 0 15px;
     }
     .footer-relative {
         position: relative;
         width: 90%;
-    }
-    .footer-small--link {
-        display: inline-block;
-        width: 50%;
     }
     .quiz {
         display: flex;
@@ -134,9 +129,6 @@
     }
     .quiz--item--image-container {
         display: flex;
-        position: sticky;
-        align-self: flex-start;
-        top: 0;
     }
     .quiz--img {
         position: relative;
@@ -146,7 +138,6 @@
     .quiz--img-top{
         position: absolute;
         top: 0;
-        left: 50%;
         width: 40%;
     }
     .quiz--img-bottom {
@@ -161,10 +152,6 @@
         height: auto;
         padding: 100px 80px;
     }
-    .quiz--container {
-        width: 90%;
-        padding: 30px 20px;
-    }
     .quiz--title {
         text-align: center;
         margin: 20px;
@@ -177,5 +164,53 @@
     }
     .quiz--additional {
         margin: 30px 0;
+    }
+    @media only screen and (max-width: 991px) {
+        .btn-action {
+            width: 100%;
+        }
+        .quiz {
+            flex-direction: column;
+        }
+        .quiz--item {
+            width: 100%;
+        }
+        .quiz--img {
+            height: auto;
+            width: 100vw;
+        }
+        .quiz--img-bottom {
+            display: none;
+        }
+        .quiz--text {
+            padding: 20px;
+            border-top: 2px solid white;
+            min-height: 70vh;
+        }
+    }
+    @media only screen and (min-width: 992px) {
+        .quiz--item--image-container {
+            position: sticky;
+            align-self: flex-start;
+            top: 0;
+        }
+        .quiz--img-top {
+            left: 50%;
+        }
+        .quiz--container {
+            width: 90%;
+            padding: 30px 20px;
+        }
+        .footer-absolute {
+            position: absolute;
+            width: 40%;
+        }
+        .footer-small--link {
+            display: inline-block;
+            width: 50%;
+        }
+        .btn {
+            font-size: 1.2rem;
+        }
     }
 </style>
