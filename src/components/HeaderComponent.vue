@@ -18,6 +18,7 @@
 <style>
     .header {
         position: absolute;
+        top: 0;
         z-index: 5;
         padding: 30px;
         margin-bottom: 40px;

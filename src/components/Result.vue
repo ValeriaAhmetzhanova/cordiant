@@ -1,6 +1,5 @@
 <template>
     <div>
-        <Header/>
         <div class="quiz">
             <div class="quiz--item quiz--item--image-container">
                 <img class="quiz--img" :src="image" alt="">
@@ -60,11 +59,8 @@
 </template>
 
 <script>
-    import Header from "./HeaderComponent";
-
     export default {
         name: "Result",
-        components: { Header },
         props: {
             correct: {
                 required: true

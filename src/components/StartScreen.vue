@@ -1,6 +1,5 @@
 <template> 
     <div>
-        <Header/>
         <div id="start">
             <div class="start-info">
                 <div class="start-info--title">
@@ -31,11 +30,8 @@
 </template>
 
 <script>
-    import Header from "./HeaderComponent";
-
     export default {
         name: "StartScreen",
-        components: { Header }
     };
 </script>
 

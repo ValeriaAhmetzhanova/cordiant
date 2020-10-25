@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Header/>
         <div v-if="status==='start'">
             <StartScreen v-on:startQuiz="next"/>
         </div>
@@ -27,6 +28,7 @@
     import StartScreen from './StartScreen'
     import Question from "./Question";
     import Result from "./Result";
+    import Header from "./HeaderComponent";
 
     export default {
         data() {
@@ -62,7 +64,8 @@
         components: {
             StartScreen,
             Question,
-            Result
+            Result,
+            Header
         }
     }
 </script>
@@ -103,10 +106,10 @@
     .footer-small {
         display: flex;
         flex-direction: row-reverse;
-        position: fixed;
+        position: relative;
         padding: 20px;
         bottom: 0;
-        width: 40%;
+        width: 90%;
         text-align: right;
     }
     .footer-small--link {
@@ -119,13 +122,15 @@
     }
     .quiz--item {
         justify-content: center;
-        height: 100vh;
         width: 50%;
         background-repeat: no-repeat;
-        overflow: hidden;
+        overflow-x: hidden;
     }
     .quiz--item--image-container {
         display: flex;
+        position: sticky;
+        align-self: flex-start;
+        top: 0;
     }
     .quiz--img {
         position: relative;
@@ -135,14 +140,14 @@
     .quiz--img-top{
         position: absolute;
         top: 0;
-        left: 25%;
-        width: 20%;
+        left: 50%;
+        width: 40%;
     }
     .quiz--img-bottom {
         position: absolute;
         bottom: 0;
         left: 0;
-        width: inherit;
+        width: 100%;
         height: auto;
     }
     .quiz--text {
