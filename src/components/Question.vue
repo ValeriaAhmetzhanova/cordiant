@@ -75,7 +75,7 @@
         },
         computed: {
             image() {
-                return require(`../assets/${this.index + 1}.png`)
+                return require(`../assets/${this.index + 1}.jpeg`)
             }
         },
         methods: {
